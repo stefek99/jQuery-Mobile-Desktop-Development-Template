@@ -6,33 +6,36 @@
 	<script src="scripts/jquery.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="styles/main.css" />
+	<link rel="stylesheet" href="styles/reset.css" />
 
 </head>
 
 <body>
 
 <div class="left">
-	<marquee style="left:248;top:9;height:321;"scrollamount="1" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:226;top:14;height:423;"direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:75;top:10;height:479;"scrollamount="3" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:198;top:11;height:352;"scrollamount="4" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:297;top:36;height:491;"scrollamount="7" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:97;top:42;height:200;"scrollamount="2" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:165;top:47;height:292;"scrollamount="7" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:306;top:42;height:241;"scrollamount="4" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:146;top:43;height:238;"direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:127;top:70;height:46;"scrollamount="6" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:63;top:66;height:193;"scrollamount="3" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:279;top:90;height:144;"scrollamount="4" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:263;top:35;height:224;"scrollamount="5" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:225;top:6;height:48;"scrollamount="1" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:115;top:41;height:132;"scrollamount="6" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:266;top:82;height:457;"scrollamount="1" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:304;top:58;height:279;"direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:68;top:73;height:343;"scrollamount="2" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:28;top:101;height:205;"scrollamount="3" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:242;top:12;height:369;"scrollamount="6" direction="down">This is demo. Work in progress.</marquee>
-	<marquee style="left:157;top:24;height:465;"scrollamount="2" direction="down">This is demo. Work in progress.</marquee>
+	<span id="marquee">
+		<marquee style="left:248;top:9;height:321;"scrollamount="1" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:226;top:14;height:423;"direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:75;top:10;height:479;"scrollamount="3" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:198;top:11;height:352;"scrollamount="4" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:297;top:36;height:491;"scrollamount="7" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:97;top:42;height:200;"scrollamount="2" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:165;top:47;height:292;"scrollamount="7" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:306;top:42;height:241;"scrollamount="4" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:146;top:43;height:238;"direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:127;top:70;height:46;"scrollamount="6" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:63;top:66;height:193;"scrollamount="3" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:279;top:90;height:144;"scrollamount="4" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:263;top:35;height:224;"scrollamount="5" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:225;top:6;height:48;"scrollamount="1" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:115;top:41;height:132;"scrollamount="6" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:266;top:82;height:457;"scrollamount="1" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:304;top:58;height:279;"direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:68;top:73;height:343;"scrollamount="2" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:28;top:101;height:205;"scrollamount="3" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:242;top:12;height:369;"scrollamount="6" direction="down">This is demo. Work in progress.</marquee>
+		<marquee style="left:157;top:24;height:465;"scrollamount="2" direction="down">This is demo. Work in progress.</marquee>
+	</span>
 </div>
 
 <div class="right">
@@ -47,14 +50,29 @@ $(function() {
 	
 	$(window).on('DOMMouseScroll mousewheel', function (e) {
 		$body = $("iframe").contents().find("body");
-
 		var nCurrentScroll = $body.scrollTop();
 		var nNewScroll = nCurrentScroll - e.originalEvent.wheelDelta;
-		console.log(nNewScroll)
 		$body.scrollTop(nNewScroll);
-
 		return false;
 	});
+
+	var hidden = false;
+    $("body").keydown(function(event) {
+        if (event.keyCode == 32) {
+
+          if (hidden == false) {
+            hidden = true;
+            $("#marquee").slideDown();
+
+          } else {
+            hidden = false;
+            $("#marquee").slideUp();
+          }
+        } 
+     });
+
+
+
 });
 </script>
 
