@@ -1,0 +1,41 @@
+html {
+    background: black url(images/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+#template {
+    width: 425px;
+}
+
+iframe {
+    height: 480px;
+    width: 320px;
+    border: 6px solid rgb(105, 105, 105);
+    top: 157px;
+    left: 64px;
+}
+
+.left {
+    height: 1px;
+}
+.right {
+    margin-top: -25px;
+}
+
+.left, .right {
+    position: relative;
+    width: 50%;
+    display: block;
+    float: left;
+}
+
+marquee {
+    z-index:2;
+    position:absolute;
+    font-size: 1.3em;
+    font-family: 'Open Sans', sans-serif;
+}
