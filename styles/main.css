@@ -46,7 +46,7 @@
 }
 
 @media (max-width: 600px) {
-    .left, #template {
+    .left, #template, a.ribbon {
         display : none;
     }
 
