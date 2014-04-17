@@ -1,4 +1,4 @@
-## jQuery Mobile Desktop Development Template
+## (jQuery) Mobile Desktop Development Template
 
 ### Because it sucks to develop on the large screen
 
@@ -9,3 +9,4 @@
 * Yeoman: http://yeoman.io/ (HTML5 boilerplate)
 * Marquee generator: from somewhere
 * iPhone image: from somewhere
+* back then I was relying on jQuery mobile, currently I use Ionic: http://www.iamthespecialist.com/2014/03/so-you-are-trying-to-find-web-framework.html (with much better results)

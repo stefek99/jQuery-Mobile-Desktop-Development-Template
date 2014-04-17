@@ -1,3 +1,23 @@
+* { 
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.info {
+    background: rgba(1,1,1,0.5);
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+}
+
 @media (min-width: 601px) {
     html {
         background: black url(../images/background.jpg) no-repeat center center fixed; 
@@ -23,25 +43,15 @@
         left: 64px;
     }
 
-    .left {
-        height: 1px;
-    }
     .right {
         margin-top: -25px;
     }
 
     .left, .right {
         position: relative;
-        width: 50%;
+        width: 40%;
         display: block;
         float: left;
-    }
-
-    marquee {
-        z-index:2;
-        position:absolute;
-        font-size: 1.3em;
-        font-family: 'Open Sans', sans-serif;
     }
 }
 
