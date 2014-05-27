@@ -18,6 +18,10 @@ html, body {
     color: white;
 }
 
+a {
+    color: yellow;
+}
+
 @media (min-width: 601px) {
     html {
         background: black url(../images/background.jpg) no-repeat center center fixed; 
